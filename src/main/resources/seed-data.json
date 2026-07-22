@@ -1,0 +1,73 @@
+{
+  "customers": [
+    {
+      "commercialName": "Cervecería Nacional Dominicana S.A.",
+      "ownerName": "Franklin León Jimenes",
+      "email": "contacto@cnd.com.do",
+      "phone": "809-482-3000",
+      "rnc": "101-00051-2"
+    },
+    {
+      "commercialName": "Grupo Ramos S.A.",
+      "ownerName": "Mercedes Ramos",
+      "email": "info@gruporamos.com.do",
+      "phone": "809-532-5252",
+      "rnc": "101-01642-7"
+    },
+    {
+      "commercialName": "Mercasid S.A.",
+      "ownerName": "Ligia Bonetti",
+      "email": "atencion.cliente@mercasid.com.do",
+      "phone": "809-565-2121",
+      "rnc": "101-00123-3"
+    },
+    {
+      "commercialName": "Induveca S.A.",
+      "ownerName": "Pedro Brache",
+      "email": "servicios@induveca.com.do",
+      "phone": "809-573-2211",
+      "rnc": "102-00045-8"
+    },
+    {
+      "commercialName": "Farmacias Carol S.A.S.",
+      "ownerName": "Julio César Curiel",
+      "email": "contacto@farmaciascarol.com",
+      "phone": "809-562-6767",
+      "rnc": "101-55443-1"
+    }
+  ],
+  "locations": [
+    {
+      "streetAddress": "Av. San Martín #279, Ensanche La Fe",
+      "city": "Santo Domingo",
+      "stateProvince": "Distrito Nacional",
+      "country": "Dominican Republic",
+      "postalCode": "10514",
+      "isPrimary": true
+    },
+    {
+      "streetAddress": "Autopista Duarte Km 5 1/2",
+      "city": "Santiago de los Caballeros",
+      "stateProvince": "Santiago",
+      "country": "Dominican Republic",
+      "postalCode": "51000",
+      "isPrimary": false
+    },
+    {
+      "streetAddress": "Av. Winston Churchill esq. Gustavo Mejía Ricart",
+      "city": "Santo Domingo",
+      "stateProvince": "Distrito Nacional",
+      "country": "Dominican Republic",
+      "postalCode": "10109",
+      "isPrimary": true
+    },
+    {
+      "streetAddress": "Bulevar Turístico del Este, Plaza San Juan",
+      "city": "Punta Cana",
+      "stateProvince": "La Altagracia",
+      "country": "Dominican Republic",
+      "postalCode": "23000",
+      "isPrimary": false
+    }
+  ]
+}
