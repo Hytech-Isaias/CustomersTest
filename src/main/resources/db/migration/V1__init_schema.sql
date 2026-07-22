@@ -1,12 +1,15 @@
 CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 
 CREATE TABLE customers (
-    id            UUID         PRIMARY KEY DEFAULT gen_random_uuid(),
-    name          VARCHAR(150) NOT NULL,
-    email         VARCHAR(255) NOT NULL,
-    created_at    TIMESTAMP    NOT NULL DEFAULT now(),
-    updated_at    TIMESTAMP    NOT NULL DEFAULT now(),
-    deleted_at    TIMESTAMP             DEFAULT NULL,
+    id              UUID         PRIMARY KEY DEFAULT gen_random_uuid(),
+    commercial_name VARCHAR(150) NOT NULL,
+    owner_name      VARCHAR(150) NOT NULL,
+    email           VARCHAR(255) NOT NULL,
+    phone           VARCHAR(30),
+    rnc             VARCHAR(50),
+    created_at      TIMESTAMP    NOT NULL DEFAULT now(),
+    updated_at      TIMESTAMP    NOT NULL DEFAULT now(),
+    deleted_at      TIMESTAMP             DEFAULT NULL,
 
     CONSTRAINT uq_customers_email UNIQUE (email)
 );

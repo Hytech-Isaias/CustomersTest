@@ -26,11 +26,20 @@ public class Customer {
     @Column(name = "id", updatable = false, nullable = false)
     private UUID id;
 
-    @Column(name = "name", nullable = false, length = 150)
-    private String name;
+    @Column(name = "commercial_name", nullable = false, length = 150)
+    private String commercialName;
+
+    @Column(name = "owner_name", nullable = false, length = 150)
+    private String ownerName;
 
     @Column(name = "email", nullable = false, unique = true, length = 255)
     private String email;
+
+    @Column(name = "phone", length = 30)
+    private String phone;
+
+    @Column(name = "rnc", length = 50)
+    private String rnc;
 
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
@@ -47,9 +56,12 @@ public class Customer {
     protected Customer() {
     }
 
-    public Customer(String name, String email) {
-        this.name = name;
+    public Customer(String commercialName, String ownerName, String email, String phone, String rnc) {
+        this.commercialName = commercialName;
+        this.ownerName = ownerName;
         this.email = email;
+        this.phone = phone;
+        this.rnc = rnc;
     }
 
     @PrePersist
@@ -80,12 +92,20 @@ public class Customer {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getCommercialName() {
+        return commercialName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCommercialName(String commercialName) {
+        this.commercialName = commercialName;
+    }
+
+    public String getOwnerName() {
+        return ownerName;
+    }
+
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
     }
 
     public String getEmail() {
@@ -94,6 +114,22 @@ public class Customer {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getRnc() {
+        return rnc;
+    }
+
+    public void setRnc(String rnc) {
+        this.rnc = rnc;
     }
 
     public LocalDateTime getCreatedAt() {
@@ -128,6 +164,11 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customer{id=" + id + ", name='" + name + "', email='" + email + "'}";
+        return "Customer{id=" + id
+                + ", commercialName='" + commercialName + '\''
+                + ", ownerName='" + ownerName + '\''
+                + ", email='" + email + '\''
+                + ", phone='" + phone + '\''
+                + ", rnc='" + rnc + "'}";
     }
 }
