@@ -25,15 +25,20 @@ public class EventPublisher {
      */
     public void publish(String topic, String key, Object event) {
         log.info("Publishing event [{}] to topic [{}] with key [{}]", event.getClass().getSimpleName(), topic, key);
-        kafkaTemplate.send(topic, key, event)
-                .whenComplete((result, ex) -> {
-                    if (ex != null) {
-                        log.error("Failed to publish event [{}] to topic [{}]: {}",
-                                event.getClass().getSimpleName(), topic, ex.getMessage(), ex);
-                    } else {
-                        log.debug("Successfully published event [{}] offset [{}]",
-                                event.getClass().getSimpleName(), result.getRecordMetadata().offset());
-                    }
-                });
+        try {
+            kafkaTemplate.send(topic, key, event)
+                    .whenComplete((result, ex) -> {
+                        if (ex != null) {
+                            log.error("Failed to publish event [{}] to topic [{}]: {}",
+                                    event.getClass().getSimpleName(), topic, ex.getMessage(), ex);
+                        } else {
+                            log.debug("Successfully published event [{}] offset [{}]",
+                                    event.getClass().getSimpleName(), result.getRecordMetadata().offset());
+                        }
+                    });
+        } catch (Exception e) {
+            log.error("Synchronous error during Kafka event publish [{}] to topic [{}]: {}",
+                    event.getClass().getSimpleName(), topic, e.getMessage(), e);
+        }
     }
 }
